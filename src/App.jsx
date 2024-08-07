@@ -24,10 +24,12 @@ function App() {
     );
   };
 
-  const updateTodoText = (id, todoText) => {
+  const updateTodoText = (id, todoText, todoDate) => {
     setTodos((prev) =>
       prev.map((eachTodo) =>
-        eachTodo.id === id ? { ...eachTodo, todo: todoText } : eachTodo
+        eachTodo.id === id
+          ? { ...eachTodo, todo: todoText, date: todoDate }
+          : eachTodo
       )
     );
   };
@@ -50,8 +52,8 @@ function App() {
     <TodoProvider
       value={{ todos, addTodo, updateTodoText, toggleCompleted, deleteTodo }}
     >
-      <div className="bg-[#172842] h-[100vh] w-[100vw] py-8">
-        <div className="w-full max-w-2xl mx-auto shadow-xl rounded-lg px-4 py-3 text-white">
+      <div className="bg-[#172842] h-[100vh] w-screen py-8">
+        <div className="w-full max-w-3xl mx-auto shadow-xl rounded-lg px-4 py-3 text-white">
           <h1 className="text-3xl font-bold text-center sm:mb-8 sm:mt-2 mb-14 mt-8">
             Todo Manager
           </h1>

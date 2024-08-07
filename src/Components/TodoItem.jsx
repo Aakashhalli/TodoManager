@@ -39,7 +39,7 @@ function TodoItem({ todo }) {
             value={todoText}
             disabled={!isEditable}
             className={`sm:w-[370px] w-[120px] shrink-0 py-1 text-black font-semibold outline-none ml-2 ${
-              todo.isCompleted ? "line-through bg-green-300" : ""
+              todo.isCompleted ? "line-through" : ""
             }`}
             onChange={(e) => setTodoText(e.target.value)}
           />
